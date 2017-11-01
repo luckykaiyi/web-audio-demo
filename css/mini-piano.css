@@ -1,0 +1,58 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  width: 40%;
+  padding: 10% 5% 1%;
+  background: black;
+  margin: 5% auto;
+  border-radius: 5%;
+}
+.keyboard {
+  position: relative;
+  display: -webkit-box;
+}
+.key-white {
+  width:11.625%;
+  padding-top: 50%;
+  background: #fff;
+  margin-right: 1%;
+  border-radius: 0 0 10px 10px;
+  cursor: pointer;
+  box-shadow: 0px 2px 1px #efefef;
+}
+.key-black {
+  padding-top: 30%;
+  width: 7%;
+  position: absolute;
+  top: 0;
+  background: black;
+  border-radius: 0 0 3px 3px;
+  cursor: pointer;
+  box-shadow: 0px 1px 1px #191919;
+}
+.key-black:hover {
+  background: #191919;
+}
+.key-black:nth-child(2) {
+  left: 8.625%;
+}
+.key-black:nth-child(4) {
+  left: 21.25%;
+}
+.key-black:nth-child(7) {
+  left: 46.5%;
+}
+.key-black:nth-child(9) {
+  left: 59.125%;
+}
+.key-black:nth-child(11) {
+  left: 71.75%;
+}
+.keyboard .key-white:hover {
+  background: #efefef;
+}
+.keyboard .key-white:last-child {
+  margin-right: 0;
+}

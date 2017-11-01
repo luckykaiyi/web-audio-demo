@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>web-audio-example</title>
+</head>
+<body>
+  <script>
+    // create web audio api context
+    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    // create OscillatorNode
+    var oscillator = audioCtx.createOscillator();
+
+    oscillator.type = 'square';
+    oscillator.frequency.value = 440; // value in hertz
+    oscillator.start();
+    oscillator.stop(audioCtx.currentTime + 1);
+  </script>
+</body>
+</html>
