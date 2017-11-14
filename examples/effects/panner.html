@@ -8,9 +8,8 @@
   <audio src="/files/dhxy.wav" controls>
     Your browser does not support the audio tag.
   </audio>
-  <!-- <p id="pos"></p> -->
   <script>
-    // create web audio api context
+    // create web audio context
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
     // create source
@@ -26,11 +25,9 @@
     
     // add 3d effect
     var a=0,r=10;
-    var pos = document.getElementById('pos');
     function rotate() {
       requestAnimationFrame(rotate);
-      // pos.innerHTML = 'x: ' + panner.positionX.value+ '; y: ' + panner.positionY.value + '; z: ' + panner.positionZ.value;
-      panner.setPosition(Math.sin(a/100)*r, 0, Math.cos(a/100)*r);
+      panner.setPosition(Math.sin(a / 100) * r, 0, Math.cos(a / 100) * r);
       a++;
     }
     rotate();

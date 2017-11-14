@@ -9,7 +9,7 @@
   <button class="stop">Stop</button>
   <input class="volume" type="range" value="0" step="0.1" min="0" max="1" />
   <script>
-    // create web audio api context
+    // create web audio context
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     var gainNode = audioCtx.createGain();
     var source;
@@ -27,9 +27,9 @@
     // connect gainNode to destination
     gainNode.connect(audioCtx.destination);
 
-    // use XHR to load an audio track, and
-    // decodeAudioData to decode it and stick it in a buffer.
-    // Then we put the buffer into the source
+    // use XHR to load an audio track
+    // use decodeAudioData to decode arraybuffer 
+    // put the decoded buffer into the source
 
     function getData() {
       source = audioCtx.createBufferSource();
@@ -40,9 +40,7 @@
       request.responseType = 'arraybuffer';
 
       request.onload = function() {
-        var audioData = request.response;
-
-        audioCtx.decodeAudioData(audioData, function(buffer) {
+        audioCtx.decodeAudioData(request.response, function(buffer) {
             source.buffer = buffer;
             source.connect(gainNode);
             source.loop = true;
@@ -52,16 +50,14 @@
       request.send();
     }
 
-    // wire up buttons to stop and play audio
-
     play.onclick = function() {
       getData();
-      source.start(0);
+      source.start();
       play.setAttribute('disabled', 'disabled');
     }
 
     stop.onclick = function() {
-      source.stop(0);
+      source.stop();
       play.removeAttribute('disabled');
     }
   </script>

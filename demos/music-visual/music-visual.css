@@ -24,21 +24,6 @@ ul {
   margin: auto;
   display: -webkit-box;
 }
-/*.wrapper:after {
-  content: '';
-  position: absolute;
-  width: 300%;
-  height: 300%;
-  top: 0;
-  left: 0;
-  border: 1px solid #efefef;
-  -webkit-transform: scale(.333);
-  -ms-transform: scale(.333);
-  transform: scale(.333);
-  -webkit-transform-origin: left top;
-  -ms-transform-origin: left top;
-  transform-origin: left top;
-}*/
 .visual-box {
   -webkit-box-flex: 1;
   height: 100%;

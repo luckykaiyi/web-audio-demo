@@ -1,5 +1,5 @@
 (function() {
-  // create audio context
+  // create web audio context
   var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
   // create source
@@ -23,7 +23,7 @@
   var canvasHeight = canvas.height;
   var barWidth = canvasWidth / bufferlength; 
   var barHeight;
-  var capH = 3;
+  var capH = 3; //顶部小块的高度
   var caps = [];
 
   // create LinearGradient

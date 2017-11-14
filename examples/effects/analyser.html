@@ -9,12 +9,12 @@
     Your browser does not support the audio tag.
   </audio>
   <div>
-    <canvas id="visualizer" width="600" height="100">
+    <canvas id="visualizer" width="800" height="400">
       your browser does not support the canvas tag
     </canvas>
   </div>
   <script>
-    // create audio context
+    // create web audio context
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
     // create source
@@ -23,7 +23,7 @@
 
     // create analyser
     var analyser = audioCtx.createAnalyser();
-    analyser.fftSize = 2048;
+    analyser.fftSize = 1024;
     var bufferlength = analyser.frequencyBinCount;
     var dataArray = new Uint8Array(bufferlength);
 

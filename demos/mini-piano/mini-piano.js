@@ -1,22 +1,19 @@
 (function() {
-  // create an audio context
+  // create web audio context
   var audioCtx = new (window.AudioContext || window.webkitAudioContext) ();
 
   var keys = Array.prototype.slice.call(document.getElementsByClassName('key'));
 
   keys.forEach(function(key) {
-    key.onclick = function() {
-      // create an audio source
+    key.onmouseover = function() {
       var oscillator = audioCtx.createOscillator();
+      
       var gainNode = audioCtx.createGain();
 
-      // link source and destination nodes together
       oscillator.connect(gainNode);
       gainNode.connect(audioCtx.destination);
       
-      // 设定音调类型
       oscillator.type = 'sine';
-      // 设定声音频率
       oscillator.frequency.value = parseFloat(key.getAttribute('data-freq')); // value in hertz
 
       // 最初音量为0

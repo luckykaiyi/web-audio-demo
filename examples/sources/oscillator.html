@@ -6,14 +6,15 @@
 </head>
 <body>
   <script>
-    // create web audio api context
+    // create web audio context
     var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
     // create OscillatorNode
     var oscillator = audioCtx.createOscillator();
-
+    oscillator.connect(audioCtx.destination);
+    
     oscillator.type = 'square';
-    oscillator.frequency.value = 440; // value in hertz
+    oscillator.frequency.value = 880; // value in hertz
     oscillator.start();
     oscillator.stop(audioCtx.currentTime + 1);
   </script>
