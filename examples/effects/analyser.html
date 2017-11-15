@@ -47,11 +47,11 @@
       canvasCtx.beginPath();
 
       analyser.getByteTimeDomainData(dataArray);
-      console.log(dataArray);
+      // console.log(dataArray);
 
       var x = 0;
       for(var i = 0; i < bufferlength; i++) {
-        var v = dataArray[i] / 256;
+        var v = dataArray[i] / 255;
         var y = v * canvasHeight;
         if(i == 0) {
           canvasCtx.moveTo(x, y);

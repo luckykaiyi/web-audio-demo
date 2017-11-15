@@ -61,7 +61,7 @@
     analyser.getByteFrequencyData(dataArray);
     for(var i = 0; i < bufferlength; i++) {
       var cap = caps[i];
-      barHeight = dataArray[i] / 256 * canvasHeight;
+      barHeight = dataArray[i] / 255 * canvasHeight;
       canvasCtx.fillStyle = gradient;
       canvasCtx.fillRect(barWidth * i, canvasHeight - barHeight, barWidth * 0.8, barHeight);
       canvasCtx.fillRect(barWidth * i, canvasHeight - (capH + cap.h), barWidth * 0.8, capH);
