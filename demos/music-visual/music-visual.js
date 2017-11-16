@@ -23,7 +23,7 @@
   var canvasHeight = canvas.height;
   var barWidth = canvasWidth / bufferlength; 
   var barHeight;
-  var capH = 3; //顶部小块的高度
+  var capH = 6; //顶部小块的高度
   var caps = [];
 
   // create LinearGradient

@@ -24,7 +24,7 @@
     panner.connect(audioCtx.destination);
     
     // add 3d effect
-    var a=0,r=10;
+    var a=0,r=5;
     function rotate() {
       requestAnimationFrame(rotate);
       panner.setPosition(Math.sin(a / 100) * r, 0, Math.cos(a / 100) * r);
