@@ -11,6 +11,9 @@
 
     // create OscillatorNode
     var oscillator = audioCtx.createOscillator();
+
+    // connect source to destination
+    oscillator.connect(audioCtx.destination);
     
     oscillator.type = 'square';
     oscillator.frequency.value = 880; // value in hertz
